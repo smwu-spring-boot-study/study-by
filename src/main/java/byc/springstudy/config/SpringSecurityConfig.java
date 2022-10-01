@@ -1,7 +1,7 @@
 package byc.springstudy.config;
 
-import byc.springstudy.Role;
-import byc.springstudy.UserService;
+import byc.springstudy.domain.Role;
+import byc.springstudy.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

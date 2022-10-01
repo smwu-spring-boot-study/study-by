@@ -1,5 +1,6 @@
-package byc.springstudy;
+package byc.springstudy.web;
 
+import byc.springstudy.domain.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,5 +1,9 @@
-package byc.springstudy;
+package byc.springstudy.service;
 
+import byc.springstudy.repository.UserRepository;
+import byc.springstudy.domain.OAuthAttributes;
+import byc.springstudy.domain.SessionUser;
+import byc.springstudy.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

@@ -1,4 +1,4 @@
-package byc.springstudy;
+package byc.springstudy.domain;
 
 import lombok.Builder;
 import lombok.Getter;
