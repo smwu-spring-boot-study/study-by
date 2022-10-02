@@ -1,4 +1,4 @@
-package byc.springstudy.domain;
+package byc.springstudy.domain.user;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -10,5 +10,5 @@ public enum Role {
     ADMIN("ROLE_ADMIN", "관리자");
 
     private final String key;
-    private final String value;
+    private final String title;
 }

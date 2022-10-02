@@ -1,6 +1,6 @@
 package byc.springstudy.repository;
 
-import byc.springstudy.domain.User;
+import byc.springstudy.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

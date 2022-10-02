@@ -1,34 +1,44 @@
-package byc.springstudy.domain;
+package byc.springstudy.domain.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Builder
-@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Entity
+@Table(name = "tb_user")
 public class User {
-
-    public User(){ }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String nickname;
+    private String name;
 
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false)
+    private String nickname;
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
-    public User update(String nickname) {
+    @Builder
+    public User(String name, String email, String nickname, Role role){
+        this.name = name;
+        this.email = email;
+        this.nickname = nickname;
+        this.role = role;
+    }
+
+    public User update(String name, String nickname) {
+        this.name = name;
         this.nickname = nickname;
 
         return this;

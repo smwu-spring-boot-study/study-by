@@ -1,6 +1,7 @@
 package byc.springstudy.web;
 
-import byc.springstudy.domain.SessionUser;
+import byc.springstudy.config.auth.LoginUser;
+import byc.springstudy.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,15 +11,12 @@ import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
-public class UserController {
-
-    private final HttpSession httpSession;
+public class IndexController {
 
     @GetMapping("/")
-    public String index(Model model){
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");
+    public String index(Model model, @LoginUser SessionUser user){
         if(user != null){
-            model.addAttribute("userName", user.getNickname());
+            model.addAttribute("userName", user.getName());
         }
         return "index";
     }

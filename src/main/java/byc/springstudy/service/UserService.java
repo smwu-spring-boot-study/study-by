@@ -1,9 +1,9 @@
 package byc.springstudy.service;
 
 import byc.springstudy.repository.UserRepository;
-import byc.springstudy.domain.OAuthAttributes;
-import byc.springstudy.domain.SessionUser;
-import byc.springstudy.domain.User;
+import byc.springstudy.config.auth.dto.OAuthAttributes;
+import byc.springstudy.config.auth.dto.SessionUser;
+import byc.springstudy.domain.user.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -45,7 +45,7 @@ public class UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2U
 
     private User saveOrUpdate(OAuthAttributes attributes) {
         User user = userRepository.findByEmail(attributes.getEmail())
-                .map(entity -> entity.update(attributes.getNickname()))
+                .map(entity -> entity.update(attributes.getName(), attributes.getNickname()))
                 .orElse(attributes.toEntity());
 
         return userRepository.save(user);
