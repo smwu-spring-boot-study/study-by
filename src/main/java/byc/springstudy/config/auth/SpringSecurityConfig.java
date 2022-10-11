@@ -28,18 +28,4 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .userInfoEndpoint()
                 .userService(userService);
     }
-    /*@Bean
-    public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception{
-        httpSecurity.csrf().disable()
-                .authorizeRequests()
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/profile").permitAll()
-                .antMatchers("/api/**").hasRole(Role.USER.name())
-                .anyRequest().authenticated().and()
-                .logout().logoutSuccessUrl("/").and()
-                .oauth2Login()
-                .userInfoEndpoint()
-                .userService(userService);
-
-        return httpSecurity.build();
-    }*/
 }
