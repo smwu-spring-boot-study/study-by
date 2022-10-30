@@ -4,10 +4,10 @@
         <!-- 로그인 기능 영역 -->
         <div class="row">
             <div class="col-md-6">
+                <a href="/items/save" class="btn btn-primary" role="button">글 등록</a>
                 {{#userName}}
                     Logged in as: <span id="user">{{userName}}</span>
                     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                    <a href="/items/save" class="btn btn-items active" role="button">글 등록</a>
                 {{/userName}}
                 {{^userName}}
                     <a href="/oauth2/authorization/naver" class="btn btn-success active" role="button">Naver Login</a>

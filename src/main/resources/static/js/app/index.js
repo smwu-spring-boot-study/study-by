@@ -1,13 +1,13 @@
 var main = {
     init : function (){
         var _this = this;
-        $('btn-save').on('click', function (){
+        $('#btn-save').on('click', function (){
             _this.save();
         });
-        $('btn-update').on('click', function (){
+        $('#btn-update').on('click', function (){
             _this.update();
         });
-        $('btn-delete').on('click', function (){
+        $('#btn-delete').on('click', function (){
             _this.delete();
         });
     },
@@ -41,7 +41,7 @@ var main = {
 
         $.ajax({
             type: 'PUT',
-            url: '/v1/admin/items'+id,
+            url: '/v1/admin/items/'+id,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(data)
@@ -57,7 +57,7 @@ var main = {
 
         $.ajax({
             type: 'DELETE',
-            url: '/v1/admin/items'+id,
+            url: '/v1/admin/items/'+id,
             dataType: 'json',
             contentType: 'application/json; charset=utf-8'
         }).done(function (){

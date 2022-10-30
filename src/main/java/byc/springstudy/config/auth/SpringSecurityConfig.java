@@ -17,12 +17,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         httpSecurity
+                .cors().and()
                 .csrf().disable()
                 .headers().frameOptions().disable()
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll()
-                .antMatchers("/api/**").hasRole(Role.USER.name())
+                .antMatchers("/api/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
                 .antMatchers("/v1/admin/**").hasRole(Role.ADMIN.name())
                 .anyRequest().authenticated()
                 .and()
