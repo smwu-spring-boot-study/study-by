@@ -20,19 +20,19 @@ public class IndexController {
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user){
+        model.addAttribute("items", itemsService.findAllDesc());
         if(user != null){
-            model.addAttribute("items", itemsService.findAllDesc());
             model.addAttribute("userName", user.getName());
         }
         return "index";
     }
 
-    @GetMapping("/v1/admin/items/save")
+    @GetMapping("/items/save")
     public String itemsSave(){
         return "items-save";
     }
 
-    @GetMapping("/v1/admin/items/update/{id}")
+    @GetMapping("/items/update/{id}")
     public String itemsUpdate(@PathVariable Long id, Model model){
         ItemsResponseDto dto = itemsService.findById(id);
         model.addAttribute("item", dto);

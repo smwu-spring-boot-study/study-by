@@ -7,7 +7,7 @@
                 {{#userName}}
                     Logged in as: <span id="user">{{userName}}</span>
                     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                    <a href="/v1/admin/items/save" class="btn btn-items active" role="button">글 등록</a>
+                    <a href="/items/save" class="btn btn-items active" role="button">글 등록</a>
                 {{/userName}}
                 {{^userName}}
                     <a href="/oauth2/authorization/naver" class="btn btn-success active" role="button">Naver Login</a>
@@ -30,7 +30,7 @@
             {{#items}}
                 <tr>
                     <td>{{id}}</td>
-                    <td><a href="/v1/admin/items/update/{{id}}">{{title}}</a></td>
+                    <td><a href="/items/update/{{id}}">{{title}}</a></td>
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
