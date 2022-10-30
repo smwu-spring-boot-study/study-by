@@ -26,4 +26,10 @@ public class ItemsApiController {
     public ItemsResponseDto findById(@PathVariable Long id){
         return itemsService.findById(id);
     }
+
+    @DeleteMapping("/v1/admin/items/{id}")
+    public Long delete(@PathVariable Long id){
+        itemsService.delete(id);
+        return id;
+    }
 }

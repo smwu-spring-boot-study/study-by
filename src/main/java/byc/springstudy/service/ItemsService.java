@@ -44,4 +44,12 @@ public class ItemsService {
     public List<ItemsListResponseDto> findAllDesc(){
         return itemsRepository.findAllDesc().stream().map(ItemsListResponseDto::new).collect(Collectors.toList());
     }
+
+    @Transactional
+    public void delete(Long id){
+        Items items = itemsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 상품이 없습니다. id="+id));
+
+        itemsRepository.delete(items);
+    }
 }
