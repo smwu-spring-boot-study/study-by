@@ -1,0 +1,26 @@
+{{>layout/header}}
+
+<h1>아이템 등록</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" placeholder="제목을 입력하세요.">
+            </div>
+            <div class="form-group">
+                <label for="author">작성자</label>
+                <input type="text" class="form-control" id="author" placeholder="작성자를 입력하세요.">
+            </div>
+            <div class="form-group">
+                <label for="content">설명</label>
+                <input type="text" class="form-control" id="content" placeholder="설명을 입력하세요.">
+            </div>
+        </form>
+        <a href="/" class="btn btn-home active" role="button">취소</a>
+        <button type="button" class="btn btn-items active" id="btn-save">등록</button>
+    </div>
+</div>
+
+{{>layout/footer}}

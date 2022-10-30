@@ -20,4 +20,9 @@ public class IndexController {
         }
         return "index";
     }
+
+    @GetMapping("/items/save")
+    public String itemsSave(){
+        return "items-save";
+    }
 }
