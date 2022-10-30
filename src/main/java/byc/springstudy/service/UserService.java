@@ -1,13 +1,11 @@
 package byc.springstudy.service;
 
-import byc.springstudy.repository.UserRepository;
+import byc.springstudy.domain.user.UserRepository;
 import byc.springstudy.config.auth.dto.OAuthAttributes;
 import byc.springstudy.config.auth.dto.SessionUser;
 import byc.springstudy.domain.user.User;
-import io.jsonwebtoken.lang.Assert;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;

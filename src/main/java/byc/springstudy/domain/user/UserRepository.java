@@ -1,4 +1,4 @@
-package byc.springstudy.repository;
+package byc.springstudy.domain.user;
 
 import byc.springstudy.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
