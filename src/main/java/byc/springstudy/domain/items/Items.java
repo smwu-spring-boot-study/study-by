@@ -23,15 +23,19 @@ public class Items extends BaseTimeEntity {
 
     private String author;
 
+    private Long categoryId;
+
     @Builder
-    public Items(String title, String content, String author){
+    public Items(String title, String content, String author, Long categoryId){
         this.title = title;
         this.content = content;
         this.author = author;
+        this.categoryId = categoryId;
     }
 
-    public void update(String title, String content){
+    public void update(String title, String content, Long categoryId){
         this.title = title;
         this.content = content;
+        this.categoryId = categoryId;
     }
 }

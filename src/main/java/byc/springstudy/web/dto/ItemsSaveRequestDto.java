@@ -11,12 +11,14 @@ public class ItemsSaveRequestDto {
     private String title;
     private String content;
     private String author;
+    private Long categoryId;
 
     @Builder
-    public ItemsSaveRequestDto(String title, String content, String author){
+    public ItemsSaveRequestDto(String title, String content, String author, Long categoryId){
         this.title = title;
         this.content = content;
         this.author = author;
+        this.categoryId = categoryId;
     }
 
     public Items toEntity(){
@@ -24,6 +26,7 @@ public class ItemsSaveRequestDto {
                 .title(title)
                 .content(content)
                 .author(author)
+                .categoryId(categoryId)
                 .build();
     }
 }
