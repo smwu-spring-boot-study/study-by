@@ -28,7 +28,7 @@ public class ItemsService {
     public Long update(Long id, ItemsUpdateRequestDto requestDto){
         Items items = itemsRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 물품이 없습니다. id="+id));
-        items.update(requestDto.getTitle(), requestDto.getContent(), requestDto.getCategoryId());
+        items.update(requestDto.getTitle(), requestDto.getContent());
 
         return id;
     }
