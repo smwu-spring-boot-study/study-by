@@ -1,12 +1,11 @@
 package byc.springstudy.domain.category;
 
-import byc.springstudy.domain.items.Items;
+import byc.springstudy.domain.categoryitems.CategoryItems;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -28,11 +27,11 @@ public class Category {
     @Column(name = "depth")
     private Long depth;
 
-    @ManyToMany
-    private Set<Items> items;
+    @OneToMany(mappedBy = "category")
+    private List<CategoryItems> categoryItems = new ArrayList<>();
 
     @OneToMany(mappedBy = "parent")
     private List<Category> children = new ArrayList<>();
 
-    public Set<Items> getItems() { return items; }
+    //public Set<Items> getItems() { return items; }
 }

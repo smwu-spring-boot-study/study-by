@@ -1,11 +1,14 @@
 package byc.springstudy.domain.items;
 
 import byc.springstudy.domain.BaseTimeEntity;
+import byc.springstudy.domain.categoryitems.CategoryItems;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -24,6 +27,8 @@ public class Items extends BaseTimeEntity {
     private String author;
 
     //private Long categoryId;
+    @OneToMany(mappedBy = "items")
+    private List<CategoryItems> categoris = new ArrayList<>();
 
     @Builder
     public Items(String title, String content, String author){
