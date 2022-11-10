@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class CategoryResultDto {
     private Long id;
     private String title;
-    private Long depth;
+    private Integer depth;
     private List<CategoryResultDto> children;
 
     public static CategoryResultDto of(Category category){

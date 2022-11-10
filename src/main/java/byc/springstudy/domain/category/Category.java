@@ -25,7 +25,7 @@ public class Category {
     private Category parent;
 
     @Column(name = "depth")
-    private Long depth;
+    private Integer depth;
 
     @OneToMany(mappedBy = "category")
     private List<CategoryItems> categoryItems = new ArrayList<>();
